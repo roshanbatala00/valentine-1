@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Pretty Girlfriend 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins', sans-serif;
+    overflow:hidden;
+}
+
+/* Front Page - Garden Background */
+.page{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+#mainPage{
+    background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    color:white;
+    text-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* Front Text */
+h1{
+    font-family:'Great Vibes', cursive;
+    font-size:50px;
+    background: rgba(255,255,255,0.25);
+    padding: 20px;
+    border-radius: 20px;
+    color: #ff3f8f;
+    text-shadow: 0 0 20px rgba(255,255,255,.8);
+}
+
+/* Question & Buttons */
+.question{
+    font-size:30px;
+    margin:20px;
+    color:#ffe6f0;
+    font-weight:600;
+    text-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+.buttons{
+    display:flex;
+    gap:30px;
+}
+
+button{
+    padding:14px 34px;
+    font-size:20px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#yes{
+    background:#ff6fae;
+    color:white;
+    box-shadow:0 0 15px rgba(255,105,180,.7);
+}
+
+#no{
+    background:#90e5b6;
+    color:#065f46;
+    position:relative;
+}
+
+/* Letter Page */
+#letterPage{
+    display:none;
+    animation:fadeIn 2s;
+    background:linear-gradient(to bottom,#fff0f5,#ffe6f0);
+    overflow-y:auto;
+    padding:50px 20px;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.letter{
+    background:rgba(255,255,255,0.9);
+    border-radius:25px;
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+    box-shadow:0 0 50px rgba(255,182,193,.6);
+}
+
+.letter h2{
+    font-family:'Great Vibes', cursive;
+    font-size:36px; /* smaller & clear */
+    color:#ff3f8f;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.letter p{
+    margin-top:15px;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* Floating Petals & Hearts */
+.petal,.heart{
+    position:absolute;
+    animation: fall linear infinite;
+}
+
+.petal{
+    width:14px;
+    height:14px;
+    background:pink;
+    border-radius:50%;
+}
+
+.heart{
+    width:18px;
+    height:18px;
+    background:red;
+    transform:rotate(45deg);
+}
+
+.heart:before,.heart:after{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:18px;
+    background:red;
+    border-radius:50%;
+}
+
+.heart:before{left:-9px;}
+.heart:after{top:-9px;}
+
+@keyframes fall{
+    from{transform:translateY(-10px);}
+    to{transform:translateY(110vh);}
+}
+
+/* Scrollbar style for letter */
+#letterPage::-webkit-scrollbar{
+    width:12px;
+}
+#letterPage::-webkit-scrollbar-track{
+    background:#ffe6f0;
+    border-radius:10px;
+}
+#letterPage::-webkit-scrollbar-thumb{
+    background:#ff6fae;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FRONT PAGE -->
+<div class="page" id="mainPage">
+    <h1>For my pretty girlfriend, the one and only girl in my life —<br>
+    Mrs. PUJANA DOBAL JEU, urf Puju Don 💗</h1>
+
+    <div class="question">Would you be my Valentine?</div>
+
+    <div class="buttons">
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+</div>
+
+<!-- LETTER PAGE -->
+<div class="page" id="letterPage">
+    <div class="letter">
+        <h2>HAPPY VALENTINE’S DAY, MERI PYARI 💗</h2>
+
+        <p><b>Dear Pujana,</b></p>
+
+        <p>
+Once again, Happy Valentine’s Day, my love — meri pukuli, meri budi jeu 🌷
+You remain the most beautiful soul — pure, rare, flawless, without a single doubt.
+        </p>
+
+        <p>
+I love you endlessly, hopelessly, madly 💗💗💗
+        </p>
+
+        <p>
+My life has only one destination — <b>YOU</b>.
+        </p>
+
+        <p>
+You are my peace, my chaos, my dream, my home.
+You are my entire universe wrapped in a single heartbeat.
+        </p>
+
+        <p><b>I LOVE YOU INFINITELY 💖🌸</b></p>
+    </div>
+</div>
+
+<script>
+// runaway NO button
+const noBtn=document.getElementById("no");
+noBtn.addEventListener("mouseover",()=>{
+    noBtn.style.left=Math.random()*(window.innerWidth-100)+"px";
+    noBtn.style.top=Math.random()*(window.innerHeight-100)+"px";
+});
+
+// YES opens letter
+document.getElementById("yes").onclick=()=>{
+    document.getElementById("mainPage").style.display="none";
+    document.getElementById("letterPage").style.display="block";
+}
+
+// petals + hearts
+function createPetal(){
+    let p=document.createElement("div");
+    p.className="petal";
+    p.style.left=Math.random()*100+"vw";
+    p.style.animationDuration=(Math.random()*5+6)+"s";
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),10000);
+}
+
+function createHeart(){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(Math.random()*6+6)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),12000);
+}
+
+setInterval(createPetal,300);
+setInterval(createHeart,900);
+</script>
+
+</body>
+</html>
